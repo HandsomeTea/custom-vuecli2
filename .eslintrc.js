@@ -23,10 +23,6 @@ module.exports = {
     },
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-        'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
-    },
-    rules: {
-        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         '@typescript-eslint/no-explicit-any': 2, // 是否允许声明any类型
         '@typescript-eslint/no-inferrable-types': 2, //类型推断
