@@ -14,5 +14,5 @@ export interface ToogleSideAction {
 }
 
 export interface SetLanguageAction {
-    (language: 'zh' | 'en'): never;
+    (language: 'zh-cn' | 'zh-tw' | 'en'): never;
 }
