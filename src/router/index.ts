@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
+import VueRouter, { NavigationGuardNext, Route, RouteConfig } from 'vue-router';
 
 Vue.use(VueRouter);
 
@@ -13,10 +13,25 @@ const routes: Array<RouteConfig> = [{
     }]
 }];
 
-const router = new VueRouter({
+const route = new VueRouter({
     mode: process.env.NODE_ENV === 'development' ? 'hash' : 'history',
     base: process.env.BASE_URL,
     routes
 });
 
-export default router;
+/**
+ * 全局导航守卫
+ */
+
+/* 前置导航守卫 */
+route.beforeEach((to: Route, from: Route, next: NavigationGuardNext) => {
+    // do something before next route
+    next();
+});
+
+/* 后置导航守卫 */
+route.afterEach((/*to: Route, from: Route*/) => {
+    // do something after route
+});
+
+export default route;
