@@ -6,7 +6,7 @@ import user from './user';
 Vue.use(Vuex);
 const state: RootState = {
     loginStatus: false,
-    language: (window.navigator.language || 'zh-cn').toLowerCase(),
+    language: window.navigator.language as SupportLanguageType || 'zh-cn',
     menuHidden: false,
     screenType: 'pc'
 };
@@ -26,7 +26,7 @@ const store: StoreOptions<RootState> = {
         _logout(state: RootState) {
             state.loginStatus = false;
         },
-        _setLanguage(state: RootState, language: string) {
+        _setLanguage(state: RootState, language: SupportLanguageType) {
             if (state.language !== language) {
                 state.language = language;
             }
@@ -51,7 +51,7 @@ const store: StoreOptions<RootState> = {
         logout({ commit }) {
             commit('_logout');
         },
-        setLanguage({ commit }, language: string) {
+        setLanguage({ commit }, language: SupportLanguageType) {
             commit('_setLanguage', language);
         },
         setScreenType({ commit }) {

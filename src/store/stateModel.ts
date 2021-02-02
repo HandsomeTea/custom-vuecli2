@@ -1,6 +1,6 @@
 export interface RootState {
     loginStatus: boolean;
-    language: string;
+    language: SupportLanguageType;
     menuHidden: boolean;
     screenType: 'phone' | 'ipad' | 'spc' | 'pc';
 }
@@ -14,5 +14,5 @@ export interface ToogleSideAction {
 }
 
 export interface SetLanguageAction {
-    (language: 'zh-cn' | 'zh-tw' | 'en'): never;
+    (language: SupportLanguageType): never;
 }
