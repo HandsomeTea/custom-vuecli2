@@ -6,7 +6,7 @@ import user from './user';
 Vue.use(Vuex);
 const state: RootState = {
     loginStatus: false,
-    language: window.navigator.language as SupportLanguageType || 'zh-cn',
+    language: window.navigator.language.toLowerCase() as SupportLanguageType || 'zh-cn',
     menuHidden: false,
     screenType: 'pc'
 };
