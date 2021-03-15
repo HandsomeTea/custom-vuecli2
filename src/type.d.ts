@@ -13,12 +13,13 @@ declare interface HttpException {
     httpInfo: string;
     status: number;
     type?: string;
-    error: exceptionError;
+    error: ExceptionError;
 }
 
 declare interface ApiResult {
-    data?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-    error?: httpException;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    data?: any;
+    error?: HttpException;
 }
 
 type SupportLanguageType = 'zh-cn' | 'zh-tw' | 'en';

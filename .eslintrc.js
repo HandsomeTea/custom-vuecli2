@@ -19,7 +19,11 @@ module.exports = {
     },
     globals: {
         window: true,
-        document: true
+        document: true,
+        HttpException: true,
+        HttpArgument: true,
+        ApiResult: true,
+        SupportLanguageType: true
     },
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
