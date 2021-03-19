@@ -14,7 +14,9 @@
     "upgrade": "./node_modules/.bin/npm-check -u",
     "lint": "vue-cli-service lint",
     "webpack-rules": "vue inspect --rules > webpack.default.rules.txt",
-    "webpack-plugins": "vue inspect --plugins > webpack.default.plugins.txt"
+    "webpack-plugins": "vue inspect --plugins > webpack.default.plugins.txt",
+    "husky-init": "husky install",
+    "husky-hook": "husky add .husky/pro-commit \"npm run lint\" && husky add .husky/pro-push \"npm run lint\""
   },
   "repository": {
     "type": "git",
@@ -31,7 +33,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
     "element-ui": "^2.15.1",
-    "vant": "^2.12.9",
+    "vant": "^2.12.10",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-i18n": "^8.24.1",
@@ -65,12 +67,6 @@
     "vue-template-compiler": "^2.6.11",
     "vuex-class": "^0.3.2",
     "webpack-merge": "^5.7.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run lint"
-    }
   },
   "lint-staged": {
     "./**/*.{js,ts,vue}": [
