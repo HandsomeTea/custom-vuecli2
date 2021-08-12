@@ -24,7 +24,7 @@ new Vue({
     render: h => h(App),
     watch: {
         $route(to: Route /*, from*/) {
-            if (to.meta.title) {
+            if (to.meta?.title) {
                 document.title = `elementUI — ${to.meta.title}`;
             }
         },
