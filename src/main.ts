@@ -25,7 +25,7 @@ new Vue({
     watch: {
         $route(to: Route /*, from*/) {
             if (to.meta?.title) {
-                document.title = `elementUI — ${to.meta.title}`;
+                document.title = `elementUI — ${i18n.t(to.meta.title)}`;
             }
         },
         lang() {
